@@ -35,7 +35,7 @@ const NavbarComponent = () => {
         </div>
         <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
           <li onClick={handleNavItemClick}><a href="#about">About</a></li>
-          <li onClick={handleNavItemClick}><a href="#experience">experience</a></li>
+          <li onClick={handleNavItemClick}><a href="#experience">Experience</a></li>
           <li onClick={handleNavItemClick}><a href="#projects">Projects</a></li>
           <li onClick={handleNavItemClick}><a href="#skills">Skills</a></li>
           <li onClick={handleNavItemClick}><a href="#contact">Contact</a></li>
