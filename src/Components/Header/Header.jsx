@@ -37,7 +37,7 @@ const Header = () => {
               <FaGithubSquare className="social-icon github-icon" />
             </a>
           </div>
-          <a href="https://drive.google.com/uc?export=download&id=1omoSkDG4r_Bc7FUvEhCNWM2YjLpIWsgP" download className="download-resume-btn">
+          <a href="https://drive.google.com/uc?export=download&id=1iPYCP42uLKblMbqgrvJYTlX9XbMJbIh1" download className="download-resume-btn">
             Download Resume
           </a>
         </div>
