@@ -8,7 +8,7 @@ import express from "../assets/images/express js img.png";
 import mongo from "../assets/images/mongo db img.png";
 import node from "../assets/images/node js img.png";
 import git from "../assets/images/git img.png";
-
+import AWS from "../assets/images/aws2.png";
 const skillsData = [
   { name: "HTML", image: html  },
   { name: "CSS", image: css  },
@@ -16,7 +16,8 @@ const skillsData = [
   { name: "ReactJS", image: react },
   { name: "Node.js", image: node }, 
   { name: "Express.js", image: express },
-  { name: "MongoDB", image: mongo }, 
+  { name: "MongoDB", image: mongo },  
+  {name:"AWS", image:AWS},
   { name: "GIT", image: git  },
 ];
 
