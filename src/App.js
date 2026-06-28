@@ -7,12 +7,17 @@ import Header from './Components/Header/Header';
 import NavbarComponent from './Components/Navbar/NavbarComponent.js';
 import Project from './Components/Projects/Project.jsx';
 import Skills from './Components/Skills/Skills.js';
+import Preloader from './Components/Preloader/Preloader';
+import useScrollReveal from './hooks/useScrollReveal';
 
 
 
 function App() {
+  useScrollReveal();
+
   return (
-    <div className="App">  
+    <div className="App">
+      <Preloader/>
       <NavbarComponent/>
       <Header/>
       <AboutSection />  

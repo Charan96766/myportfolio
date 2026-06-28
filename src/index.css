@@ -1,13 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Instrument+Serif:ital@0;1&display=swap');
+
+:root {
+  /* Light Theme Variables */
+  --bg-primary: #f1f1f7;
+  --bg-secondary: #eaeaf2;
+  --text-primary: #0d1117;
+  --text-secondary: #4b5563;
+  --text-tertiary: #6b7280;
+
+  --primary-color: #ff5c35; /* Orange (primary accent) */
+  --primary-glow: rgba(255, 92, 53, 0.18);
+  --primary-hover: #f04e28;
+  --accent-color: #6366f1; /* Indigo (secondary accent) */
+  --accent-hover: #818cf8;
+
+  /* Orange brand */
+  --accent-orange: #ff5c35;
+  --accent-orange-soft: rgba(255, 92, 53, 0.12);
+  --gradient-orange: linear-gradient(120deg, #ff7a45 0%, #ff5c35 50%, #ffae42 100%);
+
+  --gradient-primary: linear-gradient(135deg, #ff7a45 0%, #ff5c35 100%);
+  --gradient-text: linear-gradient(120deg, #a855f7 0%, #6366f1 50%, #38bdf8 100%);
+
+  --glass-bg: rgba(241, 241, 247, 0.78);
+  --glass-border: rgba(15, 23, 42, 0.08);
+  --glass-shadow: rgba(31, 38, 135, 0.1);
+
+  --card-bg: #ffffff;
+  --card-shadow: 0 14px 36px -16px rgba(15, 23, 42, 0.18), 0 2px 6px -2px rgba(15, 23, 42, 0.05);
+  --card-border: rgba(15, 23, 42, 0.08);
+
+  --font-primary: 'Space Grotesk', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  --font-mono: 'Space Mono', 'Courier New', monospace;
+  --font-serif: 'Instrument Serif', Georgia, serif;
+
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+body.dark-mode {
+  /* Dark Theme Variables */
+  --bg-primary: #0b0f19;
+  --bg-secondary: #111827;
+  --text-primary: #f8fafc;
+  --text-secondary: #cbd5e1;
+  --text-tertiary: #94a3b8;
+  
+  --primary-color: #ff7a4d; /* Orange (primary accent) */
+  --primary-glow: rgba(255, 122, 77, 0.22);
+  --primary-hover: #ff5c35;
+  --accent-color: #818cf8; /* Indigo (secondary accent) */
+  --accent-hover: #a5b4fc;
+
+  --accent-orange: #ff7a4d;
+  --accent-orange-soft: rgba(255, 122, 77, 0.16);
+  --gradient-orange: linear-gradient(120deg, #ff9a5c 0%, #ff6a3d 50%, #ffc14d 100%);
+
+  --gradient-primary: linear-gradient(135deg, #ff9a5c 0%, #ff6a3d 100%);
+  --gradient-text: linear-gradient(120deg, #c084fc 0%, #818cf8 50%, #38bdf8 100%);
+
+  --glass-bg: rgba(11, 15, 25, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: rgba(0, 0, 0, 0.37);
+
+  --card-bg: #151d30;
+  --card-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
+  --card-border: rgba(255, 255, 255, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: var(--font-secondary), -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-tertiary);
+  border-radius: 5px;
+  border: 2px solid var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+/* Reference-style section label:  — LABEL  */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  margin-bottom: 18px;
+}
+
+.section-label::before {
+  content: '';
+  width: 36px;
+  height: 2px;
+  background: var(--accent-orange);
+}
+
+/* Italic serif accent used inside display headings */
+.serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* Faint constellation-dot backdrop */
+.dot-bg {
+  background-image: radial-gradient(circle, rgba(99, 102, 241, 0.12) 1px, transparent 1.4px);
+  background-size: 34px 34px;
+}
+
+/* Scroll Reveal Animations (initial state; GSAP ScrollTrigger animates these in) */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  will-change: opacity, transform;
+}
+
+.reveal.reveal-left {
+  transform: translateX(-50px);
+}
+
+.reveal.reveal-right {
+  transform: translateX(50px);
+}
+
+.reveal.reveal-scale {
+  transform: scale(0.92);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  html { scroll-behavior: auto; }
+}
+
+/* Common Section Heading Accent */
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 3.5rem;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-heading::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 30%;
+  right: 30%;
+  height: 4px;
+  background: var(--gradient-primary);
+  border-radius: 2px;
 }

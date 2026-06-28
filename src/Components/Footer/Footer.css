@@ -1,75 +1,87 @@
-
 .footer {
-    padding: 20px;
-    text-align: center;
-    position: relative;
-    bottom: 0;
-    width: 100%;
-    font-size: 14px;
-    transition: background-color 0.3s ease;
+  padding: 30px 20px;
+  background-color: var(--bg-primary);
+  color: var(--text-tertiary);
+  border-top: 1px solid var(--card-border);
+  position: relative;
+  width: 100%;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  letter-spacing: 0.5px;
+  transition: var(--transition-smooth);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-content p {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.love-icon {
+  color: #ef4444;
+  animation: heart-beat 1.5s infinite;
+  flex-shrink: 0;
+}
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 1000;
+  background: var(--accent-orange);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px var(--primary-glow);
+  transition: var(--transition-smooth);
+}
+
+.arrow-icon {
+  font-size: 1.2rem;
+  color: #ffffff;
+  transition: var(--transition-fast);
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 30px var(--primary-glow);
+}
+
+.scroll-to-top:hover .arrow-icon {
+  transform: translateY(-2px);
+}
+
+@keyframes heart-beat {
+  0%, 100% {
+    transform: scale(1);
   }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  
-  .footer {
-    background-color: #f1f1f1; 
-    color: #2c3e50; 
-  }
-  
- 
-  .love-icon {
-    margin: 0 5px;
-    color: #e74c3c; 
-    transition: color 0.3s ease;
-  }
-  
-  
-  .scroll-to-top {
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
-    cursor: pointer;
-    font-size: 24px;
-    z-index: 1000;
-    transition: transform 0.3s ease;
-  }
-  
-  .arrow-icon {
-    font-size: 2rem;
-    color: #2c3e50;
-    transition: color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .scroll-to-top:hover .arrow-icon {
+  50% {
     transform: scale(1.2);
   }
-  
+}
 
-  body.dark-mode .footer {
-    background-color: #2c3e50; 
-    color: #e0e0e0; 
+@media (max-width: 768px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
   }
-  
-  body.dark-mode .love-icon {
-    color: #ff6b6b; 
-  }
-  
-  body.dark-mode .arrow-icon {
-    color: #e0e0e0; 
-  }
-  
- 
-  @media (max-width: 768px) {
-    .scroll-to-top {
-      bottom: 20px;
-      right: 20px;
-    }
-  }
+}
   

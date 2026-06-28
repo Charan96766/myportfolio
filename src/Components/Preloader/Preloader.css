@@ -1,0 +1,116 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Column curtain panels (the visible background) */
+.preloader-cols {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 1;
+}
+
+.preloader-col {
+  flex: 1;
+  height: 100%;
+  background: var(--bg-primary);
+}
+
+.preloader-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Gradient SC logo mark */
+.preloader-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--gradient-orange);
+  color: #fff;
+  font-family: var(--font-primary);
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+  box-shadow: 0 12px 28px -8px var(--primary-glow);
+  margin-bottom: 6px;
+}
+
+.preloader-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+
+/* Mask wrapper for the name reveal */
+.preloader-name-wrap {
+  overflow: hidden;
+  padding: 2px 0;
+}
+
+.preloader-name {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 5vw, 2.6rem);
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.preloader-progress {
+  display: flex;
+  align-items: flex-start;
+  font-family: var(--font-primary);
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 8px;
+}
+
+.preloader-count {
+  font-size: clamp(3rem, 13vw, 6rem);
+  background: var(--gradient-orange);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.preloader-percent {
+  font-size: 1.6rem;
+  color: var(--accent-orange);
+  margin-top: 6px;
+}
+
+.preloader-track {
+  width: min(300px, 70vw);
+  height: 3px;
+  background: var(--card-border);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.preloader-bar {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--accent-orange);
+  transform: scaleX(0);
+  transform-origin: left center;
+}

@@ -1,87 +1,89 @@
 import React from 'react';
 import '../Projects/Project.css';
-import { PiLinkSimpleBold } from "react-icons/pi";
-import { FaGithub } from "react-icons/fa";  // Importing GitHub icon
-// import profilePhoto from '../assets/images/Profile.png'; 
+
+import Amura from "../assets/images/amura_health.jpg";
+import QmentisAI from "../assets/images/qmentis_ai.jpg";
+import VoltusFreight from "../assets/images/voltus_freight.jpg";
 import IMS from "../assets/images/project1.png";
-import Downy from "../assets/images/project2.png";
-import Pulse from "../assets/images/project3.png"; 
-import Weather from "../assets/images/weataher.png";
+
 const projects = [
+  {
+    title: "Amura Health & Wellness Platform",
+    description: [
+      "Contributed to the development of a health and wellness application focusing on personalized nutrition, diagnostics, and remote coaching.",
+      "Developed frontend modules with React.js/TypeScript and backend services with Node.js and Express.js for high-performing, secure data flow.",
+      "Designed and managed AWS DynamoDB schemas while integrating EC2, S3, and Lambda for scalable deployment.",
+      "Enhanced performance and security through optimized API design, caching, and infrastructure best practices."
+    ],
+    link: "",
+    github: "",
+    image: Amura,
+    category: "Health-Tech",
+    technologies: ["React", "Node.js", "TypeScript", "AWS", "Express", "Redux", "MUI", "DynamoDB"],
+  },
+  {
+    title: "QmentisAI - QA Testing Automation",
+    description: [
+      "Accelerates intelligent test design, script generation, and defect documentation for business analysts and testers.",
+      "Utilizes various AI models to enhance test efficiency, featuring adaptive scripts and self-healing capabilities.",
+      "Automates routine testing tasks, seamlessly integrating into CI/CD pipelines, DevOps, and test management systems.",
+      "Ensures end-to-end testing continuity, resulting in quicker and more effective software delivery."
+    ],
+    link: "",
+    github: "",
+    image: QmentisAI,
+    category: "AI / QA Automation",
+    technologies: ["React", "Node.js", "TypeScript", "AWS Lambda", "SQS", "Step Functions", "MySQL", "Express", "Redux", "Tailwind CSS"],
+  },
+  {
+    title: "VoltusFreight - Cargo & Logistics System",
+    description: [
+      "Cargo tracking and management platform for commercial logistics, freight forwarders, and timely cargo delivery.",
+      "Developed an adaptive card designer with drag-and-drop functionality for creating responsive integration cards.",
+      "Worked on a React-based cargo scheduler for graphical visualization and tracking from initial pickup to final delivery.",
+      "Integrated Stripe payment system and developed AI-driven email automation with WorldZone integration for vendor quotations."
+    ],
+    link: "",
+    github: "",
+    image: VoltusFreight,
+    category: "Logistics",
+    technologies: ["React", "Node.js", "TypeScript", "AWS Lambda", "SQS", "SES", "SNS", "MySQL", "Express", "Redux", "Tailwind CSS", "Stripe"],
+  },
   {
     title: "IMS Company Website",
     description: [
-      "Developed the IT Monks Solutions company website with responsiveness and user-friendliness, utilizing the MERN stack to ensure seamless functionality across devices.",
-      "Implemented OTP verification through email to enhance security measures and user authentication.",
-      "Leveraged MongoDB for robust data storage, Express.js for efficient server-side operations, React.js for dynamic client-side rendering, and Node.js for scalable backend development.",
-      "Collaborated closely with design and backend teams to integrate features and optimize user experience.",
-      "Conducted thorough testing and debugging to maintain high-quality code standards.",
+      "Developed the IT Monks Solutions company website from the ground up, ensuring smooth functionality, responsive design, and active user engagement.",
+      "Implemented OTP verification through email for user authentication to enhance application security.",
+      "Leveraged MongoDB for data storage, Express.js for server operations, React.js for client-side rendering, and Node.js for backend logic."
     ],
     link: "https://www.itmonkssolutions.com/",
-    github: "https://github.com/Charan96766/itmonkssolutions.git",  // Add GitHub URL
+    github: "https://github.com/Charan96766/itmonkssolutions.git",
     image: IMS,
-    technologies: ["HTML","CSS","JavaScript", "React.js", "Express.js","Node.js","MongoDB","Github"],
-  },
-  {
-    title: "Downy Bail Bonds Website",
-    description: [
-      "The Downey Bail Bonds website utilizes the MERN stack, including MongoDB, Express.js, React.js, and Node.js, to build a powerful and versatile platform.",
-      "The website streamlines the bail bond process with clear and intuitive navigation, making it straightforward for users to access and manage services.",
-      "Users benefit from real-time updates that keep them informed about the latest developments and information",
-      "By prioritizing efficiency and effectiveness, the website delivers a seamless experience tailored to meet clients' needs."
-    ],
-    link: "",
-    github: "https://github.com/Charan96766/downybailbonds.git",  // Add GitHub URL
-    image: Downy,
-    technologies: ["HTML","CSS","JavaScript", "React.js", "Express.js","Node.js","MongoDB","Github"],
-  }, 
-  {
-    title: "Pulse Web Application",
-    description: [
-      "Developed core functionality for user accounts, including login, signup, update, and delete features, integrated with a database.",
-      "Designed and implemented a new interface to enhance user interaction and experience.",
-      "Enabled users to manage their accounts by allowing them to log in, sign up, update, and delete their profiles, similar to other web applications.",
-      "Conducted requirement analysis and participated in the full development lifecycle, including design, coding, testing, maintenance, and deployment of the web portal.",
-      "Ensured the web application is user-friendly and accessible, providing a seamless experience for users.",
-    ],
-    link: "", 
-    github: "https://github.com/Charan96766/pulsewebapplication.git",  
-    image: Pulse,
-    technologies: ["HTML","CSS","JavaScript", "React.js", "Express.js","Node.js","MongoDB","Github"],
-  }, 
-  {
-    title: "WeatherFinder",
-    description: [
-      "Developed WeatherFetch, a Node.js and EJS-based service.",
-      "Implemented functionality for users to enter their desired location and retrieve weather data.",
-      "Integrated the Weatherstack API to fetch real-time weather information based on user input.",
-      "Displayed weather data using EJS (Embedded JavaScript) templates, without additional frontend technologies.",
-    ],
-    link: "https://adaptnxtassignmentsaicharan.onrender.com/", 
-    github: "https://github.com/Charan96766/adaptnxtassignmentsaicharan.git",  
-    image: Weather,
-    technologies: ["HTML","CSS","JavaScript", "React.js", "Express.js","Node.js","MongoDB","EJS","Github"],
-  }, 
-  
-  
-  
-  
-
+    category: "Web Platform",
+    technologies: ["React", "Node.js", "JavaScript", "Redux Toolkit", "Express.js", "MongoDB", "CSS", "Git"],
+  }
 ];
-
-
-
-
 
 const Project = () => {
   return (
     <section className="projects-section" id="projects">
-      <h2 className="projects-heading">My Projects</h2>
+      <div className="projects-header">
+        <span className="section-label">All Projects</span>
+        <h2 className="projects-heading">Selected work.</h2>
+      </div>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
+          <div
+            key={index}
+            className={`project-card reveal delay-${(index % 2) + 1}`}
+          >
+            <div className="project-image-container">
+              <img src={project.image} alt={project.title} className="project-image" />
+            </div>
             <div className="project-content">
+              <span className="project-index">
+                {String(index + 1).padStart(2, "0")} — {project.category}
+              </span>
               <h3 className="project-title">{project.title}</h3>
               <ul className="project-description">
                 {project.description.map((desc, idx) => (
@@ -92,18 +94,6 @@ const Project = () => {
                 {project.technologies.map((tech, idx) => (
                   <span key={idx} className="project-tech">{tech}</span>
                 ))}
-              </div>
-              <div className={`project-links ${project.link === "" && project.github ? 'project-links-center' : ''}`}>
-                {project.link && (
-                  <a href={project.link} className="project-link">
-                    View Project <PiLinkSimpleBold />
-                  </a>
-                )}
-                {project.github && (
-                  <a href={project.github} className="project-link github-link">
-                    View on GitHub <FaGithub />
-                  </a>
-                )}
               </div>
             </div>
           </div>
