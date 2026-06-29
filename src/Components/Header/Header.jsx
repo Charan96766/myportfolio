@@ -74,6 +74,14 @@ const Header = () => {
           <a href="#contact" className="btn-outline">
             Let's Talk <FaArrowRight />
           </a>
+          <a
+            href={`${process.env.PUBLIC_URL}/resume.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline"
+          >
+            View Resume
+          </a>
         </div>
 
         <div className="hero-stats">
