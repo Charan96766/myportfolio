@@ -39,7 +39,7 @@ const AboutSection = () => {
       </div>
 
       <div className="about-details">
-        <div className="about-detail-card education-card reveal delay-1">
+        <div className="about-detail-card education-card glow-card reveal delay-1">
           <h3>Education</h3>
           <div className="detail-item">
             <h4>B.Tech in Dairy Technology</h4>
@@ -53,7 +53,7 @@ const AboutSection = () => {
           </div>
         </div>
 
-        <div className="about-detail-card certifications-card reveal delay-2">
+        <div className="about-detail-card certifications-card glow-card reveal delay-2">
           <h3>Certifications</h3>
           <ul className="cert-list">
             <li>Full Stack Web Development — BRN Infotech</li>

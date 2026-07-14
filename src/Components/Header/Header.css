@@ -179,6 +179,11 @@ body:not(.loaded) .scroll-indicator {
     transition: var(--transition-smooth);
 }
 
+.magnetic {
+    transition-duration: 0.2s;
+    will-change: transform;
+}
+
 .btn-primary {
     background: var(--accent-orange);
     color: #fff;

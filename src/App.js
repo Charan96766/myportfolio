@@ -9,8 +9,11 @@ import Project from './Components/Projects/Project.jsx';
 import Skills from './Components/Skills/Skills.js';
 import Preloader from './Components/Preloader/Preloader';
 import ParticleBackground from './Components/ParticleBackground';
+import ScrollProgress from './Components/ScrollProgress';
+import CustomCursor from './Components/CustomCursor';
 import useScrollReveal from './hooks/useScrollReveal';
 import useLenis from './hooks/useLenis';
+import useSpotlight from './hooks/useSpotlight';
 import 'lenis/dist/lenis.css';
 
 
@@ -18,15 +21,18 @@ import 'lenis/dist/lenis.css';
 function App() {
   useScrollReveal();
   useLenis();
+  useSpotlight();
 
   return (
     <>
+    <CustomCursor />
     <ParticleBackground />
     <div className="App">
       <Preloader/>
+      <ScrollProgress/>
       <NavbarComponent/>
       <Header/>
-      <AboutSection />  
+      <AboutSection />
       <Skills/>
       <Experience /> 
       <Project /> 

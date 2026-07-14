@@ -76,7 +76,7 @@ const Contact = () => {
           </ul>
         </div>
         <form
-          className="contact-form reveal reveal-right delay-2"
+          className="contact-form glow-card reveal reveal-right delay-2"
           onSubmit={handleSubmit}
         >
           {/* Honeypot spam protection (hidden from users) */}

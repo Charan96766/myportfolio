@@ -145,6 +145,40 @@ code {
   background-color: transparent;
 }
 
+/* Keyboard-only focus outlines (accessibility) */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent-orange);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Cursor-tracking spotlight glow on cards */
+.glow-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%),
+      var(--accent-orange-soft), transparent 62%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glow-card:hover::after {
+  opacity: 1;
+}
+
 /* Reference-style section label:  — LABEL  */
 .section-label {
   display: inline-flex;
@@ -176,6 +210,34 @@ code {
 .skills-title .serif-accent,
 .projects-heading .serif-accent {
   color: var(--accent-orange);
+}
+
+/* subtle shimmer on the accent words in section headings */
+.about-heading .serif-accent,
+.experience-title .serif-accent,
+.skills-title .serif-accent,
+.projects-heading .serif-accent,
+.contact-heading .serif-accent {
+  background: linear-gradient(90deg, #ff5c35, #ffb347, #ff5c35);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: accentShimmer 4.5s linear infinite;
+}
+
+@keyframes accentShimmer {
+  to { background-position: 200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-heading .serif-accent,
+  .experience-title .serif-accent,
+  .skills-title .serif-accent,
+  .projects-heading .serif-accent,
+  .contact-heading .serif-accent {
+    animation: none;
+  }
 }
 
 /* Faint constellation-dot backdrop */

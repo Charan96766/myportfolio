@@ -42,6 +42,18 @@ const Header = () => {
     return () => clearTimeout(timeout);
   }, [display, deleting, roleIndex]);
 
+  // magnetic pull toward cursor
+  const onMagnetMove = (e) => {
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    const x = e.clientX - r.left - r.width / 2;
+    const y = e.clientY - r.top - r.height / 2;
+    el.style.transform = `translate(${x * 0.28}px, ${y * 0.4}px)`;
+  };
+  const onMagnetLeave = (e) => {
+    e.currentTarget.style.transform = "";
+  };
+
   return (
     <header className="header" id="home">
       <div className="hero-inner">
@@ -68,17 +80,19 @@ const Header = () => {
         </p>
 
         <div className="hero-actions">
-          <a href="#projects" className="btn-primary">
+          <a href="#projects" className="btn-primary magnetic" onMouseMove={onMagnetMove} onMouseLeave={onMagnetLeave}>
             View Work <FaArrowDown />
           </a>
-          <a href="#contact" className="btn-outline">
+          <a href="#contact" className="btn-outline magnetic" onMouseMove={onMagnetMove} onMouseLeave={onMagnetLeave}>
             Let's Talk <FaArrowRight />
           </a>
           <a
             href={`${process.env.PUBLIC_URL}/resume.pdf`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-outline"
+            className="btn-outline magnetic"
+            onMouseMove={onMagnetMove}
+            onMouseLeave={onMagnetLeave}
           >
             View Resume
           </a>
@@ -86,7 +100,7 @@ const Header = () => {
 
         <div className="hero-stats">
           {STATS.map((stat, i) => (
-            <div className="hero-stat" key={i}>
+            <div className="hero-stat glow-card" key={i}>
               <CountUp
                 className="hero-stat-value"
                 target={stat.target}

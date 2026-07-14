@@ -58,6 +58,15 @@ const NavbarComponent = () => {
   
   const handleNavItemClick = () => setIsOpen(false);
 
+  const onMagnetMove = (e) => {
+    const el = e.currentTarget;
+    const r = el.getBoundingClientRect();
+    el.style.transform = `translate(${(e.clientX - r.left - r.width / 2) * 0.3}px, ${(e.clientY - r.top - r.height / 2) * 0.4}px)`;
+  };
+  const onMagnetLeave = (e) => {
+    e.currentTarget.style.transform = "";
+  };
+
   return (
     <nav className={`navbar ${isDarkMode ? 'dark' : 'light'} ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
@@ -72,11 +81,6 @@ const NavbarComponent = () => {
           </a>
         </div>
         <ul className={`navbar-links ${isOpen ? 'active' : ''}`}>
-          {isOpen && (
-            <div className="navbar-close" onClick={toggleMenu}>
-              <FaTimes />
-            </div>
-          )}
           {NAV_ITEMS.map((item) => (
             <li key={item.id} onClick={handleNavItemClick}>
               <a
@@ -90,7 +94,13 @@ const NavbarComponent = () => {
         </ul>
 
         <div className="navbar-icons">
-          <a href="#contact" className="navbar-cta" onClick={handleNavItemClick}>
+          <a
+            href="#contact"
+            className="navbar-cta magnetic"
+            onClick={handleNavItemClick}
+            onMouseMove={onMagnetMove}
+            onMouseLeave={onMagnetLeave}
+          >
             <span className="cta-text">Hire Me</span>
           </a>
           <div className="navbar-theme-toggle">

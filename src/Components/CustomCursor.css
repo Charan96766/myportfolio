@@ -1,0 +1,59 @@
+/* Hide the native cursor across the whole portfolio (desktop only) */
+body.custom-cursor-active,
+body.custom-cursor-active * {
+  cursor: none !important;
+}
+
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  border-radius: 50%;
+  transition: opacity 0.3s ease;
+}
+
+/* solid centre dot — moves instantly */
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-orange);
+  z-index: 10001;
+  box-shadow: 0 0 10px var(--accent-orange);
+}
+
+/* trailing ring — eases behind the dot */
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+}
+
+.cursor-ring::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--accent-orange);
+  background: transparent;
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+/* grow + fill softly over interactive elements */
+.cursor-ring.hovering::before {
+  transform: scale(1.7);
+  background: var(--accent-orange-soft);
+  border-color: transparent;
+}
+
+/* shrink on click */
+.cursor-ring.clicking::before {
+  transform: scale(0.75);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-ring::before {
+    transition: none;
+  }
+}
