@@ -10,9 +10,7 @@ const ParticleBackground = () => {
 
   useEffect(() => {
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    // Skip the animation on phones/tablets for performance & battery.
-    const isMobile = window.matchMedia('(max-width: 768px), (pointer: coarse)').matches;
-    if (reduced || isMobile) return;
+    if (reduced) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;

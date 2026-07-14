@@ -57,3 +57,11 @@ body.custom-cursor-active * {
     transition: none;
   }
 }
+
+/* Never show the custom cursor on touch devices (fixes stray circle top-left) */
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
+}
