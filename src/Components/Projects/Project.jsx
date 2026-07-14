@@ -1,4 +1,5 @@
 import React from 'react';
+import Tilt from 'react-parallax-tilt';
 import '../Projects/Project.css';
 
 import Amura from "../assets/images/amura_health.jpg";
@@ -69,34 +70,45 @@ const Project = () => {
     <section className="projects-section" id="projects">
       <div className="projects-header">
         <span className="section-label">All Projects</span>
-        <h2 className="projects-heading">Selected work.</h2>
+        <h2 className="projects-heading">Selected <span className="serif-accent">work.</span></h2>
       </div>
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <div
+          <Tilt
             key={index}
-            className={`project-card reveal delay-${(index % 2) + 1}`}
+            className="project-tilt"
+            tiltMaxAngleX={6}
+            tiltMaxAngleY={6}
+            scale={1.02}
+            transitionSpeed={1400}
+            glareEnable={true}
+            glareMaxOpacity={0.14}
+            glareColor="#ff5c35"
+            glarePosition="all"
+            glareBorderRadius="10px"
           >
-            <div className="project-image-container">
-              <img src={project.image} alt={project.title} className="project-image" />
-            </div>
-            <div className="project-content">
-              <span className="project-index">
-                {String(index + 1).padStart(2, "0")} — {project.category}
-              </span>
-              <h3 className="project-title">{project.title}</h3>
-              <ul className="project-description">
-                {project.description.map((desc, idx) => (
-                  <li key={idx}>{desc}</li>
-                ))}
-              </ul>
-              <div className="project-technologies">
-                {project.technologies.map((tech, idx) => (
-                  <span key={idx} className="project-tech">{tech}</span>
-                ))}
+            <div className={`project-card reveal delay-${(index % 2) + 1}`}>
+              <div className="project-image-container">
+                <img src={project.image} alt={project.title} className="project-image" />
+              </div>
+              <div className="project-content">
+                <span className="project-index">
+                  {String(index + 1).padStart(2, "0")} — {project.category}
+                </span>
+                <h3 className="project-title">{project.title}</h3>
+                <ul className="project-description">
+                  {project.description.map((desc, idx) => (
+                    <li key={idx}>{desc}</li>
+                  ))}
+                </ul>
+                <div className="project-technologies">
+                  {project.technologies.map((tech, idx) => (
+                    <span key={idx} className="project-tech">{tech}</span>
+                  ))}
+                </div>
               </div>
             </div>
-          </div>
+          </Tilt>
         ))}
       </div>
     </section>

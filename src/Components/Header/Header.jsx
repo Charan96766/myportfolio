@@ -43,7 +43,7 @@ const Header = () => {
   }, [display, deleting, roleIndex]);
 
   return (
-    <header className="header dot-bg" id="home">
+    <header className="header" id="home">
       <div className="hero-inner">
         <span className="hero-badge">
           <span className="badge-dot"></span>

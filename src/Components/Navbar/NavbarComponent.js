@@ -55,6 +55,7 @@ const NavbarComponent = () => {
     return () => observer.disconnect();
   }, []);
 
+  
   const handleNavItemClick = () => setIsOpen(false);
 
   return (

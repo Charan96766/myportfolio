@@ -43,7 +43,7 @@ const Skills = () => {
     <div className="skills-section" id="skills">
       <div className="skills-header">
         <span className="section-label">Tech Stack</span>
-        <h2 className="skills-title">Tools I build with.</h2>
+        <h2 className="skills-title">Tools I <span className="serif-accent">build</span> with.</h2>
       </div>
       <div className="skills-container">
         {skillsData.map((skill, index) => (
