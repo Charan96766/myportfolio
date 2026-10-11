@@ -7,7 +7,7 @@ const experiences = [
   {
     role: "Software Engineer",
     company: "Voltuswave Technologies",
-    duration: "Dec 2024 - Present",
+    duration: "Dec 2024 - Nov 2026",
     logo: VW,
     skills: [
       "React",
@@ -22,7 +22,7 @@ const experiences = [
       "MUI"
     ],
     responsibilities: [
-      "Amura (Oct 2025 - Present): Developed health & wellness frontend modules (React) and backend services (Node.js/Express), managed AWS DynamoDB schemas, and integrated EC2, S3, and Lambda for scalable coaching automation.",
+      "Amura (Oct 2025 - Nov 2026): Developed health & wellness frontend modules (React) and backend services (Node.js/Express), managed AWS DynamoDB schemas, and integrated EC2, S3, and Lambda for scalable coaching automation.",
       "QmentisAI (Mar 2025 - Sep 2025): Engineered AI-driven QA testing automation dashboard tools utilizing step functions, SQS, Lambda, and MySQL to accelerate script generation and defect logging.",
       "VoltusFreight (Dec 2024 - Feb 2025): Developed an adaptive drag-and-drop card designer, a React cargo scheduling timeline interface, Stripe payment integration, and AI-driven automated agent quotation systems."
     ],

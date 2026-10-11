@@ -10,6 +10,7 @@ const ROLES = [
   "Full Stack Developer",
   "MERN Stack Specialist",
   "AWS Cloud Developer",
+  "Open to Work",
 ];
 
 const STATS = [
