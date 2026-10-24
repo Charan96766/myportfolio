@@ -30,7 +30,7 @@ const experiences = [
   {
     role: "Junior Software Engineer",
     company: "IT Monks Solutions",
-    duration: "Jan 2024 - Jun 2024",
+    duration: "Jan 2024 - Aug 2024",
     logo: IMS,
     skills: [
       "React",
