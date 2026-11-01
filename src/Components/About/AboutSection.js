@@ -1,6 +1,6 @@
 import React from 'react';
 import "../About/AboutSection.css";
-import profile from "../assets/images/sai charan.png";
+import profile from "../assets/images/sai charan professional.png";
 
 const AboutSection = () => {
   return (
